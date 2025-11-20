@@ -1,0 +1,6 @@
+streamlit
+pandas
+plotly
+pymongo
+lat-lon-parser
+python-dotenv

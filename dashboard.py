@@ -4,7 +4,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from pymongo import MongoClient
-from config import  MONGO_DB_URI, DB_NAME, COLLECTION_NAME
+MONGO_DB_URI = st.secrets["MONGO_DB_URI"]
+DB_NAME = st.secrets["DB_NAME"]
+COLLECTION_NAME = st.secrets["COLLECTION_NAME"]
 from lat_lon_parser import parse
 
 client = MongoClient(MONGO_DB_URI)
@@ -97,3 +99,4 @@ table_df = table_df.sort_values(by='Time', ascending=False)
 
 # hide timestamp, display only date and time
 st.dataframe(table_df[['Date & Time', 'Location', 'Coordinates', 'Magnitude', 'Depth (km)', 'Review Status']])
+

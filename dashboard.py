@@ -63,10 +63,10 @@ df['date and time'] = df['time'].dt.strftime('%d %B, %Y %I:%M %p')
 st.set_page_config(layout='wide')
 st.markdown('# Global Earthquakes')
 
-
 st.markdown('**Tip:** Hover on the map markers to view earthquake details. '
             'You can also click on the date and time, depth and magnitude headers in the table to sort ascending or '
-            'descending.')
+            'descending, to access latest/oldest earthquakes, high intensity events and other insights.')
+
 
 st.subheader('Scatter Map with Earthquake Epicentres')
 
@@ -129,3 +129,4 @@ table_df = table_df.sort_values(by='Time', ascending=False)
 # hide timestamp, display only date and time, also hide index (first col which is default)
 # Reference : https://docs.streamlit.io/develop/api-reference/data/st.dataframe
 st.dataframe(table_df[['Date & Time (UTC)', 'Location', 'Coordinates', 'Magnitude', 'Depth (km)', 'Review Status']], hide_index=True)
+

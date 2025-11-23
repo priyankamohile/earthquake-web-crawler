@@ -111,7 +111,7 @@ st.plotly_chart(fig, use_container_width=True)
 # Reference : https://docs.streamlit.io/develop/api-reference/data/st.dataframe
 st.subheader('Earthquake Summary')
 
-st.markdown('**Tip:** Sort this table by magnitude, date/time, depth for further insights. You can click on the column headers for sorting.')
+st.markdown('**Tip:** Sort this table by magnitude, date/time, depth for further insights. You can click on the three dots to the right of each column header for sorting.')
 
 
 # keep relevant columns
@@ -133,5 +133,6 @@ table_df = table_df.sort_values(by='Time', ascending=False)
 # hide timestamp, display only date and time, also hide index (first col which is default)
 # Reference : https://docs.streamlit.io/develop/api-reference/data/st.dataframe
 st.dataframe(table_df[['Date & Time (UTC)', 'Location', 'Coordinates', 'Magnitude', 'Depth (km)', 'Review Status']], hide_index=True)
+
 
 
